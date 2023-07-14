@@ -1,6 +1,41 @@
-.continer {
+a:hover {
+    background-color: darkblue;
+}
+
+table,
+th,
+td {
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+.container {
     margin-left: auto;
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
+    position: relative;
+}
+
+/* Pagination CSS */
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
 }

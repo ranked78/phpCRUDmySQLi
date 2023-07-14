@@ -27,8 +27,6 @@ if (isset($_POST['submit'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
 
     <title>CRUD OPERATION</title>
 </head>
@@ -38,18 +36,20 @@ if (isset($_POST['submit'])) {
         <form method="post">
             <div class="form-group">
                 <label>First Name</label>
-                <input type="text" pattern="[A-Za-z]+" class="form-control" placeholder="Enter your First Name" name="firstName" autocomplete="off">
+                <input type="text" pattern="[A-Za-z ]+" class="form-control" placeholder="Enter your First Name"
+                    name="firstName" autocomplete="off" required>
 
             </div>
             <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" pattern="[A-Za-z]+" class="form-control" placeholder="Enter your Last Name" name="lastName" autocomplete="off">
+                <input type="text" pattern="[A-Za-z]+" class="form-control" placeholder="Enter your Last Name"
+                    name="lastName" autocomplete="off" required>
 
             </div>
             <div class="form-group">
                 <label>Age</label>
-                <input type="number" class="form-control" placeholder="Enter your Age" name="age"
-                    autocomplete="off">
+                <input type="number" class="form-control" placeholder="Enter your Age" name="age" autocomplete="off"
+                    required>
 
             </div>
             <div class="form-group">

@@ -19,18 +19,22 @@ $result = mysqli_query($con, $sql);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="style-Arcamo.css">
     <title>CRUD OPERATION</title>
 </head>
 
 <body>
     <div class="container">
+        <br>
+        <a href="user.php" style="color: white;
+  text-decoration: none;
+  background-color: blue;
+  padding: 0.5em 1em;
+  margin-top: 1em;  border: 2px solid white;
+  border-radius: 4px; ">Add user</a>
 
-        <a href="user.php" class="text-light btn btn-primary my-5">Add user</a>
-
-        <table class="table">
+        <table>
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -68,19 +72,21 @@ $result = mysqli_query($con, $sql);
             </tbody>
         </table>
 
+        <br>
         <?php
         // Pagination links
         $total_records = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `crud`"));
         $total_pages = ceil($total_records / $records_per_page);
 
-        echo '<ul class="pagination">';
+        echo '<div class="pagination">';
         for ($i = 1; $i <= $total_pages; $i++) {
-            echo '<li class="page-item' . ($current_page == $i ? ' active' : '') . '">
-            <a class="page-link" href="?page=' . $i . '">' . $i . '</a>
-            </li>';
+            echo '
+            <a class=" ' . ($current_page == $i ? ' active' : '') . '" href="?page=' . $i . '">' . $i . '</a>
+            ';
         }
-        echo '</ul>';
+        echo '</div>';
         ?>
+
     </div>
 </body>
 
