@@ -1,12 +1,12 @@
 <?php
 include 'connect.php';
 if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $mobile = $_POST['mobile'];
-    $password = $_POST['password'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $age = $_POST['age'];
+    $address = $_POST['address'];
 
-    $sql = "insert into `crud`(name,email,mobile,password) values('$name','$email','$mobile','$password')";
+    $sql = "insert into `crud`(firstName,lastName,age,address) values('$firstName','$lastName','$age','$address')";
     $result = mysqli_query($con, $sql);
     if ($result) {
         // echo "Data Inserted successfully";
@@ -36,24 +36,24 @@ if (isset($_POST['submit'])) {
     <div class="container my-5">
         <form method="post">
             <div class="form-group">
-                <label>Name</label>
-                <input type="text" class="form-control" placeholder="Enter your Name" name="name" autocomplete="off">
+                <label>First Name</label>
+                <input type="text" pattern="[A-Za-z]+" class="form-control" placeholder="Enter your First Name" name="firstName" autocomplete="off">
 
             </div>
             <div class="form-group">
-                <label>Email</label>
-                <input type="email" class="form-control" placeholder="Enter your Email" name="email" autocomplete="off">
+                <label>Last Name</label>
+                <input type="text" pattern="[A-Za-z]+" class="form-control" placeholder="Enter your Last Name" name="lastName" autocomplete="off">
 
             </div>
             <div class="form-group">
-                <label>Mobile</label>
-                <input type="text" class="form-control" placeholder="Enter your mobile number" name="mobile"
+                <label>Age</label>
+                <input type="number" class="form-control" placeholder="Enter your Age" name="age"
                     autocomplete="off">
 
             </div>
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" placeholder="Enter your password" name="password">
+                <label>Address</label>
+                <input type="text" class="form-control" placeholder="Enter your Address" name="address">
 
             </div>
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>

@@ -7,7 +7,7 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($current_page - 1) * $records_per_page;
 
 // Query to retrieve limited records based on pagination
-$sql = "SELECT * FROM `crud` LIMIT $offset, $records_per_page";
+$sql = "SELECT * FROM `crud` ORDER BY age DESC LIMIT $offset, $records_per_page";
 $result = mysqli_query($con, $sql);
 ?>
 
@@ -21,7 +21,7 @@ $result = mysqli_query($con, $sql);
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="style-Arcamo.css">
     <title>CRUD OPERATION</title>
 </head>
 
@@ -33,12 +33,11 @@ $result = mysqli_query($con, $sql);
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">SL no</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Mobile</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">Operations</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">address</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,16 +45,16 @@ $result = mysqli_query($con, $sql);
                 if ($result && mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $id = $row['id'];
-                        $name = $row['name'];
-                        $email = $row['email'];
-                        $mobile = $row['mobile'];
-                        $password = $row['password'];
+                        $firstName = $row['firstName'];
+                        $lastName = $row['lastName'];
+                        $age = $row['age'];
+                        $address = $row['address'];
                         echo '<tr>
-                        <th scope="row">' . $id . '</th>
-                        <td>' . $name . '</td>
-                        <td>' . $email . '</td>
-                        <td>' . $mobile . '</td>
-                        <td>' . $password . '</td>
+                        <th>' . $id . '</th>
+                        <td>' . $firstName . '</td>
+                        <td>' . $lastName . '</td>
+                        <td>' . $age . '</td>
+                        <td>' . $address . '</td>
                         <td>
                         <a class="btn btn-primary" href="update.php?updateid=' . $id . '">Update</a>
                         <a class="btn btn-danger" href="delete.php?deleteid=' . $id . '">Delete</a>
