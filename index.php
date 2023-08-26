@@ -7,7 +7,7 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($current_page - 1) * $records_per_page;
 
 // Query to retrieve limited records based on pagination
-$sql = "SELECT * FROM `crud` LIMIT $offset, $records_per_page";
+$sql = "SELECT * FROM crud LIMIT $offset, $records_per_page";
 $result = mysqli_query($con, $sql);
 ?>
 
