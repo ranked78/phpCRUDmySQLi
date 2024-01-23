@@ -1,13 +1,25 @@
-a:hover {
-    background-color: darkblue;
+/* Table CSS */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 26px;
 }
 
-table,
-th,
-td {
-    margin-top: 20px;
-    border: 1px solid black;
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
 }
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+/* End Table CSS */
+
 
 .container {
     margin-left: auto;
@@ -17,25 +29,77 @@ td {
     position: relative;
 }
 
-/* Pagination CSS */
-.pagination {
-    display: inline-block;
+
+/* <a> tag CSS */
+
+a{
+  text-decoration: none;
+  border-radius: 9px;
+  color: white;
 }
 
-.pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-.pagination a.active {
+a.add-user{
     background-color: blue;
-    color: white;
-    border-radius: 5px;
+    padding: 0.5em 1em;
+}
+a.add-user:hover{
+    background-color: rgb(55, 56, 121);
+    padding: 0.5em 1em;
 }
 
-.pagination a:hover:not(.active) {
-    background-color: #ddd;
-    border-radius: 5px;
+a.update{
+    background-color: green;
+    padding: 0.5em 1em;
+}
+a.update:hover{
+    background-color: rgb(130, 204, 130);
+    padding: 0.5em 1em;
+}
+
+a.delete{
+    background-color: red;
+    padding: 0.5em 1em;
+}
+
+a.delete:hover{
+    background-color: rgb(211, 90, 90);
+    padding: 0.5em 1em;
+}
+
+/* End <a> tag CSS */
+
+
+/* Form CSS */
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+label, input {
+    display: block;
+}
+
+label {
+    margin-bottom: 5px;
 }

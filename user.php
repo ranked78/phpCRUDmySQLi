@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($con, $sql);
     if ($result) {
         // echo "Data Inserted successfully";
-        header('location:display.php');
+        header('location:index.php');
     } else {
         die(mysqli_error($con));
     }
@@ -25,40 +25,28 @@ if (isset($_POST['submit'])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style-Arcamo.css">
     <title>CRUD OPERATION</title>
 </head>
 
 <body>
-
-
-
-
-    <div class="container my-5">
+    <div>
         <form method="post">
-            <div class="form-group">
-                <label>First Name</label>
-                <input type="text" pattern="[A-Za-z ]+" class="form-control" placeholder="Enter your First Name"
-                    name="firstName" autocomplete="off" required>
+            <label>First Name</label>
+            <input type="text" pattern="[A-Za-z ]+" name="firstName" placeholder="Your name.." autocomplete="off"
+                required>
 
-            </div>
-            <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" pattern="[A-Za-z ]+" class="form-control" placeholder="Enter your Last Name"
-                    name="lastName" autocomplete="off" required>
+            <label>Last Name</label>
+            <input type="text" [A-Za-z]+ name="lastName" placeholder="Your last name.." autocomplete="off" required>
 
-            </div>
-            <div class="form-group">
-                <label>Age</label>
-                <input type="number" class="form-control" placeholder="Enter your Age" name="age" autocomplete="off"
-                    required>
+            <label>Age</label>
+            <input type="number" name="age" placeholder="Your Age.." autocomplete="off" required>
+            <br>
+            <label>Address</label>
+            <input type="text" name="address" placeholder="Your Address..">
 
-            </div>
-            <div class="form-group">
-                <label>Address</label>
-                <input type="text" class="form-control" placeholder="Enter your Address" name="address">
 
-            </div>
-            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+            <input type="submit" name="submit">
         </form>
     </div>
 </body>
